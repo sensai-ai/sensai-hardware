@@ -1,0 +1,41 @@
+[project]
+name = "sensai-hardware"
+version = "0.1.0"
+description = "Hardware Server for Sensai"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "build>=1.2.2.post1",
+    "colorlog>=6.9.0",
+    "fastapi>=0.115.12",
+    "gpiozero>=2.0.1",
+    "lgpio>=0.2.2.0",
+    "psycopg2>=2.9.10",
+    "python-dotenv>=1.1.0",
+    "requests>=2.32.3",
+    "supabase>=2.15.1",
+    "uvicorn>=0.34.2",
+    "wheel>=0.45.1",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+select = ["E", "F", "W", "I", "UP", "C90", "B", "A", "N", "D", "S"]
+ignore = ["E203", "E501"]
+
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+skip-string-normalization = false
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+known-first-party = ["server"]
+force-single-line = false
+
+
+[build-system]
+requires = ["setuptools>=78.1.0", "wheel"]
+build-backend = "setuptools.build_meta"
