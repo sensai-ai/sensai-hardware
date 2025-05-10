@@ -22,7 +22,6 @@ async def set_relay_state(relay_state: RelayState):
     Turn the relay ON (state: true) or OFF (state: false).
     Returns success status, message, and current state.
     """
-    control_relay(False)  # Ensure the relay is off at startup
     result = control_relay(relay_state.state)
 
     if not result["status"]:

@@ -50,10 +50,10 @@ def control_relay(state: bool) -> dict:
     """
     try:
         if state:
-            relay.on()  # Sets GPIO LOW for active-low relay
+            relay.off()  # Sets GPIO LOW for active-low relay
             return {"status": "success", "state": "ON"}
         else:
-            relay.off()  # Sets GPIO HIGH for active-low relay
+            relay.on()  # Sets GPIO HIGH for active-low relay
             return {"status": "success", "state": "OFF"}
     except Exception as e:
         return {"status": "error", "message": str(e)}
