@@ -15,9 +15,7 @@ router = APIRouter(prefix="/temperature", tags=["Temperature"])
 supabase = SupabaseClientManager().get_client()
 
 
-@router.get(
-    "/temperature/", response_model=TemperatureReading, status_code=status.HTTP_200_OK
-)
+@router.get("/", response_model=TemperatureReading, status_code=status.HTTP_200_OK)
 async def read_temperature():
     """Endpoint to return the most recent stored temperature."""
     recent_reading = read_temp()
