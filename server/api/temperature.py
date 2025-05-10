@@ -3,7 +3,8 @@ from fastapi import APIRouter, HTTPException, status
 from server.db.supabase_client import SupabaseClientManager
 from server.models.Temperature import (SQLQueryRequest, SQLQueryResponse,
                                        TemperatureReading)
-from server.services.utils import get_logger, read_temp
+from server.services.utils import get_logger
+from server.services.temperature_sensor import read_temp
 
 logger = get_logger(__name__)
 

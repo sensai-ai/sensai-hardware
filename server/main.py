@@ -6,10 +6,6 @@ from fastapi import FastAPI
 
 from server.api.temperature import router as temperature_router
 
-project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
-sys.path.insert(0, project_root)
-
-
 app = FastAPI()
 
 # Mount the imported router directly to the app
